@@ -29,6 +29,7 @@ if( !class_exists( 'CMB2_Field_Position' ) ) {
          * Initialize the plugin by hooking into CMB2
          */
         public function __construct() {
+            add_action( 'admin_enqueue_scripts', array( $this, 'setup_admin_scripts' ) );
             add_action( 'cmb2_render_position', array( $this, 'render' ), 10, 5 );
             add_action( 'cmb2_sanitize_position', array( $this, 'sanitize' ), 10, 4 );
         }
@@ -37,8 +38,6 @@ if( !class_exists( 'CMB2_Field_Position' ) ) {
          * Render field
          */
         public function render( $field, $value, $object_id, $object_type, $field_type ) {
-            $this->setup_admin_scripts();
-
             $position_options = array(
                 '' => __( 'Leave empty', 'cmb2' ),
                 'left' => __( 'Left', 'cmb2' ),

@@ -1,14 +1,18 @@
 <?php
-/*
-Plugin Name: CMB2 Field Type: Position
-Plugin URI: https://github.com/rubengc/cmb2-field-position
-GitHub Plugin URI: https://github.com/rubengc/cmb2-field-position
-Description: CMB2 field type to setup a jquery UI position values.
-Version: 1.0.0
-Author: Ruben Garcia
-Author URI: http://rubengc.com/
-License: GPLv2+
-*/
+/**
+ * @package      CMB2\Field_Position
+ * @author       Tsunoa
+ * @copyright    Copyright (c) Tsunoa
+ *
+ * Plugin Name: CMB2 Field Type: Position
+ * Plugin URI: https://github.com/rubengc/cmb2-field-position
+ * GitHub Plugin URI: https://github.com/rubengc/cmb2-field-position
+ * Description: CMB2 field type to setup a jquery UI position values.
+ * Version: 1.0.0
+ * Author: Tsunoa
+ * Author URI: https://tsunoa.com/
+ * License: GPLv2+
+ */
 
 
 // Exit if accessed directly
@@ -292,7 +296,7 @@ if( !class_exists( 'CMB2_Field_Position' ) ) {
          * Enqueue scripts and styles
          */
         public function setup_admin_scripts() {
-            wp_register_script( 'cmb-position', plugins_url( 'js/position.js', __FILE__ ), array( 'jquery' ), self::VERSION );
+            wp_register_script( 'cmb-position', plugins_url( 'js/position.js', __FILE__ ), array( 'jquery' ), self::VERSION, true );
 
             wp_enqueue_script( 'cmb-position' );
 
